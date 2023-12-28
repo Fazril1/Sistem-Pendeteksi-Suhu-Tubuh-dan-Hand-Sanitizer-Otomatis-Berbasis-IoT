@@ -2,7 +2,7 @@
 
 Project ini untuk memenuhi tugas akhir mata kuliah IoT
 
-Anggota kelompok Kaget: Ibnu Fazril, Muhammad Sadam Erlangga, Gilman Muslih, Wildan Budi
+Anggota kelompok Kaget: Ibnu Fazril, Muhammad Sadam Erlangga, Gilman Muslih, Wildan Budi Anggara
 
 # **Gambaran Umum Proyek Tugas Besar**
 
@@ -49,13 +49,21 @@ Gambar 1: Komponen-komponen yang digunakan dalam rangkaian **pendeteksi suhu tub
 4. LCD 1602 I2C
 5. USB micro B
 
-*kabel jumper sudah dihubungkan pada komponen-komponen yang digunakan
+note: kabel jumper sudah dihubungkan pada komponen-komponen yang digunakan
 
 # **Setup pada Komputer**
+
+Hal pertama yang dilakukan yaitu menginstall vscode di link berikut https://code.visualstudio.com/ lalu menginstall ekstensi platfrom io yang berada di dalam vscode lalu bisa tambahin project dengan menulis nama project, board arduino yang dipakai. Setelah itu bisa menginstall library yang dibutuhkan yang pertama bisa menginstall library pubsubclient berfungsi untuk berkomunikasi dengan MQTT, yang kedua yaitulibrary adafruit dengan link https://github.com/adafruit/Adafruit-MLX90614-Library dan menginstall library lcd I2C dengan link https://github.com/johnrickman/LiquidCrystal_I2C (folder ekstrak zip ditempatkan dalam lib dalam folder project platform io) dan jika sudah maka bisa menginstall node js untuk membuat dashboard yang terintegrasi dengan broker dan komponen yang dipasang ke laptop dengan link https://nodejs.org/en/, dan juga tidak lupa untuk melihat port berapa arduino itu terdeteksi di laptop dengan membuka cmd dan mengetik mode dan lihat com berapa yang ditampilkan.
+
+note: library adafruit dan liquidcrystal kami coba tidak bisa menginstall secara langsung di terminal dan harus mengunduh zip nya menggunakan perintah pio lib --global install <library name>.
 
 # **Menyatukan komponen**
 
 # **Platform yang Digunakan**
+
+Platform yang digunakan untuk menampilkan visualisasi data secara real-time adalah Node-RED Dashboard. Node-RED adalah alat pemrograman untuk menghubungkan perangkat keras, API, dan layanan online dengan cara yang baru dan menarik. Alat ini menyediakan editor berbasis browser yang memudahkan untuk menyambungkan serangkaian node yang diatur dalam editor berbasis browser untuk membentuk suatu logika atau proses tertentu menggunakan berbagai macam node dalam palet yang dapat digunakan pada saat runtime.
+
+![WhatsApp Image 2023-12-28 at 19 00 31_10bcd6ab](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/754f51e8-0c95-4e42-af81-72b4ea739fd7)
 
 # **Kode**
 
