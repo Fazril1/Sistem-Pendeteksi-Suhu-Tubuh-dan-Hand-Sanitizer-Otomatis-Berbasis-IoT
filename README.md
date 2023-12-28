@@ -59,11 +59,20 @@ note: library adafruit dan liquidcrystal kami coba tidak bisa menginstall secara
 
 # **Menyatukan komponen**
 
+Setelah melakukan setup pada komputer, selanjutnya menyatukan komponen-komponen yang diperlukan dalam membuat pendeteksi suhu tubuh
+
+![WhatsApp Image 2023-12-28 at 19 35 33_09968c19](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/739e0ef9-b12f-4112-89a3-c6f78b0c6a2c)
+
+Gambar 2: menyatukan komponen
+
+
 # **Platform yang Digunakan**
 
 Platform yang digunakan untuk menampilkan visualisasi data secara real-time adalah Node-RED Dashboard. Node-RED adalah alat pemrograman untuk menghubungkan perangkat keras, API, dan layanan online dengan cara yang baru dan menarik. Alat ini menyediakan editor berbasis browser yang memudahkan untuk menyambungkan serangkaian node yang diatur dalam editor berbasis browser untuk membentuk suatu logika atau proses tertentu menggunakan berbagai macam node dalam palet yang dapat digunakan pada saat runtime.
 
 ![WhatsApp Image 2023-12-28 at 19 00 31_10bcd6ab](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/754f51e8-0c95-4e42-af81-72b4ea739fd7)
+
+Gambar 3: Tampilan dashboard Node-RED
 
 # **Kode**
 
