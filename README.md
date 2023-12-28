@@ -26,5 +26,5 @@ Proyek ini mampu memberikan wawasan tentang konsep dasar IoT, pemrograman, dan r
 
 | Komponen | Deskripsi | Tempat Membeli | Harga |
 | --- | --- | --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+| Sensor Suhu MLX90614 | List all new or modified files | asd | asd |
+| Wemos D1 Mini | Show file differences that haven't been staged | asd | asd |
