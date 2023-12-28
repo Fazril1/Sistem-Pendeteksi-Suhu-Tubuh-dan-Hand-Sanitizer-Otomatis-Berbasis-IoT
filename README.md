@@ -53,6 +53,10 @@ Gambar 1: Komponen-komponen yang digunakan dalam rangkaian **pendeteksi suhu tub
 
 # **Setup pada Komputer**
 
+Hal pertama yang dilakukan yaitu menginstall vscode di link berikut https://code.visualstudio.com/ lalu menginstall ekstensi platfrom io yang berada di dalam vscode lalu bisa tambahin project dengan menulis nama project, board arduino yang dipakai. Setelah itu bisa menginstall library yang dibutuhkan yang pertama bisa menginstall library pubsubclient berfungsi untuk berkomunikasi dengan MQTT, yang kedua yaitulibrary adafruit dengan link https://github.com/adafruit/Adafruit-MLX90614-Library dan menginstall library lcd I2C dengan link https://github.com/johnrickman/LiquidCrystal_I2C (folder ekstrak zip ditempatkan dalam lib dalam folder project platform io) dan jika sudah maka bisa menginstall node js untuk membuat dashboard yang terintegrasi dengan broker dan komponen yang dipasang ke laptop dengan link https://nodejs.org/en/, dan juga tidak lupa untuk melihat port berapa arduino itu terdeteksi di laptop dengan membuka cmd dan mengetik mode dan lihat com berapa yang ditampilkan.
+
+note: library adafruit dan liquidcrystal kami coba tidak bisa menginstall secara langsung di terminal dan harus mengunduh zip nya menggunakan perintah pio lib --global install <library name>.
+
 # **Menyatukan komponen**
 
 # **Platform yang Digunakan**
