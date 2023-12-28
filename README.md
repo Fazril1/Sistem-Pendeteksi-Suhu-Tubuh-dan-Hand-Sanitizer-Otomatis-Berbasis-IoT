@@ -72,4 +72,4 @@ Platform yang digunakan untuk menampilkan visualisasi data secara real-time adal
 # **Menampilkan Data**
 
 # **Finalisasi**
-**asd**
+**asd assddsdsd**
