@@ -37,7 +37,7 @@ Proyek ini mampu memberikan wawasan tentang konsep dasar IoT, pemrograman, dan r
 | Water pump | Aktuator yang digunakan untuk mengalirkan cairan hand sanitizer ke tangan pengguna | shopee.co.id | Rp11.500 |
 | Kabel usb micro b | Digunakan untuk menghubungkan Wemos D1 Mini ke Laptop/PC | Sudah tersedia | Sudah tersedia |
 
-![WhatsApp Image 2023-12-28 at 16 29 40_644c1b0a](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/c9f39980-e0dc-4239-aad5-c457b6cca7d4)
+![WhatsApp Image 2023-12-28 at 17 02 43_adca8301](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/5c96edcf-5c2b-4264-b762-1ff3e127e722)
 
 Gambar 1: Komponen-komponen yang digunakan dalam rangkaian **pendeteksi suhu tubuh**
 
