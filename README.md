@@ -14,4 +14,6 @@ Proyek ini bertujuan untuk membuat perangkat iot sederhana dengan 2 sensor, deng
 
 # **Tujuan**
 **Alasan mengapa memilih proyek ini untuk memenuhi penilaian tugas besar:**
-Proyek ini dibuat untuk meningkatkan keamanan dan kesehatan di lingkungan publik. Lingkungan sekitar kita sering kali menjadi tempat penyebaran penyakit menular, terutama di era ini di mana wabah global menjadi perhatian utama.
+Proyek ini dibuat untuk meningkatkan keamanan dan kesehatan di sekitar. Lingkungan sekitar kita sering kali menjadi tempat penyebaran penyakit menular, terutama di era ini di mana wabah global menjadi perhatian utama.
+**Tujuan dari proyek ini:**
+sdsdsdsdds
