@@ -22,9 +22,20 @@ Selain untuk memenuhi kebutuhan penilaian tugas besar mata kuliah Internet of Th
 **Insight yang diperoleh dengan mengerjakan proyek ini:**
 Proyek ini mampu memberikan wawasan tentang konsep dasar IoT, pemrograman, dan rangkaian listrik.
 
-# **Alat dan Bahan yang digunakan**
+# **Alat dan Bahan yang Digunakan**
 
 | Komponen | Deskripsi | Tempat Membeli | Harga |
 | --- | --- | --- | --- |
-| Sensor Suhu MLX90614 | List all new or modified files | asd | asd |
-| Wemos D1 Mini | Show file differences that haven't been staged | asd | asd |
+| Sensor Suhu MLX90614 | Sensor yang digunakan untuk mendeteksi suhu tubuh | shopee.co.id | Rp130.000 |
+| Wemos D1 Mini | Mikrokontroler yang digunakan untuk menghubungkan dan mengontrol berbagai sensor dan perangkat eksternal serta memungkinkan untuk koneksi ke jaringan dan komunikasi nirkabel dengan perangkat lain | shopee.co.id | Rp26.900 |
+| LCD 1602 I2C | Perangkat yang digunakan untuk menampilkan hasil pembacaan sensor suhu | shopee.co.id | Rp23.000 |
+| Breadboard | Media yang digunakan untuk memasang komponen-komponen seperti Wemos D1 Mini, LCD, sensor atau komponen-komponen lain lalu dihubungkan menggunakan kabel jumper | shopee.co.id | Rp8.300 |
+| 40 kabel jumper male/female | Digunakan untuk menghubungkan komponen-komponen seperti Wemos D1 Mini, LCD, sensor atau komponen-komponen lain yang memiliki pin female/male | shopee.co.id | Rp9.500 |
+| 40 kabel jumper male/male | Digunakan untuk menghubungkan komponen-komponen seperti Wemos D1 Mini, LCD, sensor atau komponen-komponen lain yang memiliki pin female/female | shopee.co.id | Rp9.500 |
+| 40 kabel jumper female/female | Digunakan untuk menghubungkan komponen-komponen seperti Wemos D1 Mini, LCD, sensor atau komponen-komponen lain yang memiliki pin male/male | shopee.co.id | Rp9.500 |
+| Sensor Infra Red | Sensor yang digunakan untuk mendeteksi objek (tangan pengguna hand sanitizer) | shopee.co.id | Rp5.000 |
+| Water pump | Aktuator yang digunakan untuk mengalirkan cairan hand sanitizer ke tangan pengguna | shopee.co.id | Rp11.500 |
+| Kabel usb micro b | Digunakan untuk menghubungkan Wemos D1 Mini ke Laptop/PC | Sudah tersedia | Sudah tersedia |
+
+![WhatsApp Image 2023-12-28 at 16 29 40_644c1b0a](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/c9f39980-e0dc-4239-aad5-c457b6cca7d4)
+
