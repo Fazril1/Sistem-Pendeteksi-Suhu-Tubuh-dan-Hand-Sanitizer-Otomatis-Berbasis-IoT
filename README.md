@@ -15,5 +15,16 @@ Proyek ini bertujuan untuk membuat perangkat iot sederhana dengan 2 sensor, deng
 # **Tujuan**
 **Alasan mengapa memilih proyek ini untuk memenuhi penilaian tugas besar:**
 Proyek ini dibuat untuk meningkatkan keamanan dan kesehatan di sekitar. Lingkungan sekitar kita sering kali menjadi tempat penyebaran penyakit menular, terutama di era ini di mana wabah global menjadi perhatian utama.
+
 **Tujuan dari proyek ini:**
-sdsdsdsdds
+Selain untuk memenuhi kebutuhan penilaian tugas besar mata kuliah Internet of Things, kami juga ingin mengetahui cara membuat perangkat IoT dan menghubungkannya ke internet untuk memvisualisasikan datanya di platform berbasis online. Kemudian, tujuan dari dibuatnya proyek ini untuk mengetahui keamanan dan kesehatan di lingkungan sekitar dengan cara mendapatkan informasi mengenai suhu rata-rata orang-orang di lingkungan sekitar dan memberikan langkah awal pencegahan terhadap penyakit-penyakit menyebar yang berbahaya secara otomatis.
+
+**Insight yang diperoleh dengan mengerjakan proyek ini:**
+Proyek ini mampu memberikan wawasan tentang konsep dasar IoT, pemrograman, dan rangkaian listrik.
+
+# **Alat dan Bahan yang digunakan**
+
+| Komponen | Deskripsi | Tempat Membeli | Harga |
+| --- | --- | --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
