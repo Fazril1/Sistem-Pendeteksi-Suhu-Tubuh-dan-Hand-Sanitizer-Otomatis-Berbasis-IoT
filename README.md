@@ -39,3 +39,29 @@ Proyek ini mampu memberikan wawasan tentang konsep dasar IoT, pemrograman, dan r
 
 ![WhatsApp Image 2023-12-28 at 16 29 40_644c1b0a](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/c9f39980-e0dc-4239-aad5-c457b6cca7d4)
 
+Gambar 1: Komponen-komponen yang digunakan dalam rangkaian **pendeteksi suhu tubuh**
+
+(dari kiri ke kanan)
+
+1. Breadboard
+2. Sensor Suhu MLX90614
+3. Wemos D1 Mini
+4. LCD 1602 I2C
+5. USB micro B
+
+*kabel jumper sudah dihubungkan pada komponen-komponen yang digunakan
+
+# **Setup pada Komputer**
+
+# **Menyatukan komponen**
+
+# **Platform yang Digunakan**
+
+# **Kode**
+
+# **Mengirim Data/Konektivitas**
+
+# **Menampilkan Data**
+
+# **Finalisasi**
+**asd**
