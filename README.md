@@ -13,3 +13,4 @@ Proyek ini bertujuan untuk membuat perangkat iot sederhana dengan 2 sensor, deng
 1 bulan atau lebih
 
 # **Tujuan**
+**Alasan mengapa memilih proyek ini untuk memenuhi penilaian tugas besar:**
