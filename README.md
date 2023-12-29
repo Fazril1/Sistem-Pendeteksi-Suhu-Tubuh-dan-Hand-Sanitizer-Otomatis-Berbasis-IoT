@@ -79,7 +79,7 @@ Setelah semua komponen dihubungkan, rangkaian pendeteksi suhu tubuh dapat dihubu
 
 Platform yang digunakan untuk menampilkan visualisasi data secara real-time adalah Node-RED Dashboard. Node-RED adalah alat pemrograman untuk menghubungkan perangkat keras, API, dan layanan online dengan cara yang baru dan menarik. Alat ini menyediakan editor berbasis browser yang memudahkan untuk menyambungkan serangkaian node yang diatur dalam editor berbasis browser untuk membentuk suatu logika atau proses tertentu menggunakan berbagai macam node dalam palet yang dapat digunakan pada saat runtime.
 
-![WhatsApp Image 2023-12-28 at 19 00 31_10bcd6ab](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/754f51e8-0c95-4e42-af81-72b4ea739fd7)
+![WhatsApp Image 2023-12-28 at 18 47 55_6a51b954](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/e7728c60-51b6-4bdc-9bbf-d52fc1c358dc)
 
 Gambar 3: Tampilan dashboard Node-RED
 
@@ -244,6 +244,11 @@ void loop() {
 # **Menampilkan Data**
 
 Setelah menerima data dari sensor suhu MLX90614, kemudian data tersebut ditampilkan melalui dashboard Node-RED. Grafik pada dashboard akan berubah-ubah berdasarkan suhu yang terbaca oleh sensor. Pada gambar, suhu yang terbaca adalah sebesar 26.71 derajat celcius dengan batas terendah suhu adalah 0 derajat dan suhu tertinggi adalah 40 derajat celcius di mana batas suhu dapat diatur pada saat melakukan pembuatan dashboard penampil suhu di Node-RED. Suhu yang terbaca oleh sensor dipengaruhi oleh kondisi ruangan di mana pada saat melakukan uji coba rangkaian, suhu tubuh pengguna dipengaruhi oleh suhu ruangan yang berkisar 18 hingga 20 derajat celcius.   
+
+![WhatsApp Image 2023-12-28 at 19 00 31_ca1396eb](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/5e72db10-fd2e-44e4-adac-23a0fa9f7caa)
+
+Gambar x: Tampilan dashboard yang dibuat menggunakan Node-RED untuk menampilkan data suhu tubuh yang diperoleh dari sensor
+
 
 # **Finalisasi**
 
