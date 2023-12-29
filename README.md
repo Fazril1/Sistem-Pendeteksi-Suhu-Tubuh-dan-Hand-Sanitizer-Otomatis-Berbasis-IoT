@@ -73,7 +73,7 @@ Pertama hubungkan sensor suhu MLX90614 dengan Wemos D1 Mini melalui media breadb
 
 Setelah menghubungkan sensor suhu MLX90614 dengan Wemos D1 Mini, selanjutnya hubungkan LCD 1602 I2C ke Wemos D1 mini. LCD ini nantinya akan menampilkan suhu tubuh pengguna yang terbaca melalui sensor suhu. Pin pada LCD 1602 I2C (berurutan dari kiri ke kanan) adalah SCL (kabel abu-abu), SDA (kabel ungu), VCC (kabel biru) dan GND (kabel hijau). Pin-pin tersebut dihubungkan ke pin-pin yang terdapat pada Wemos D1 Mini sama seperti ketika kita menghubungkan sensor suhu dengan Wemos D1 Mini sebelumnya. SDL ke pin D2 pada Wemos D1 Mini, SCL ke D1 pada Wemos D1 Mini, VCC ke pin 5v, dan GND ke pin G Wemos D1 Mini.
 
-Setelah semua komponen dihubungkan, selanjutnya menghubungkan rangkaian pendeteksi suhu tubuh ke laptop/PC menggunakan kabel USB Micro B.
+Setelah semua komponen dihubungkan, rangkaian pendeteksi suhu tubuh dapat dihubungkan ke laptop/PC menggunakan kabel USB Micro B.
 
 # **Platform yang Digunakan**
 
