@@ -105,7 +105,11 @@ Platform yang digunakan untuk menampilkan visualisasi data secara real-time adal
 
 ![WhatsApp Image 2023-12-28 at 18 47 55_6a51b954](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/e7728c60-51b6-4bdc-9bbf-d52fc1c358dc)
 
-Gambar 5: Tampilan dashboard Node-RED
+Gambar 5: Tampilan dashboard Node-RED untuk menampilkan suhu tubuh yang didapatkan dari sensor
+
+![WhatsApp Image 2023-12-29 at 23 20 40_2d779338](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/b7bbd11c-3744-4eec-871f-1b5109badbe9)
+
+Gambar 6: Tampilan dashboard Node-RED untuk menampilkan berapa kali penggunaan hand sanitizer
 
 # **Kode**
 
@@ -399,5 +403,8 @@ Gambar 7: Rangkaian pendeteksi suhu tubuh yang terhubung ke internet
 
 ![WhatsApp Image 2023-12-29 at 22 39 12_ae6728e6](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/40b1a460-f811-4845-905d-cf7b6de018ec)
 
-Gambar x: Rangkaian hand sanitizer otomatis
+Gambar 8: Rangkaian hand sanitizer otomatis
 
+# **Final Thoughts**
+
+Kami harap dengan pengembangan proyek ini tidak hanya untuk memenuhi tugas akhir mata kuliah IoT, akan tetapi kami harap agar proyek tugas besar ini dapat bermanfaat bagi masyarakat sekitar dalam menjaga kesehatan.
