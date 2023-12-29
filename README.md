@@ -252,3 +252,10 @@ Gambar x: Tampilan dashboard yang dibuat menggunakan Node-RED untuk menampilkan 
 
 # **Finalisasi**
 
+Setelah menyelesaikan tiap tahap sebelumnya, berikut hasil dari proyek ini:
+
+![WhatsApp Image 2023-12-29 at 20 27 12_220c398b](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/06158d82-7026-4c30-be8b-469d4d26ea12)
+
+Gambar x: Rangkaian pendeteksi suhu tubuh yang terhubung ke internet
+
+
