@@ -1,4 +1,4 @@
-# **Sistem Pendeteksi Suhu Tubuh dan Hand Sanitizer Otomatis Berbasis IoT**
+![WhatsApp Image 2023-12-29 at 22 39 12_86c79104](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/ea9fdf27-1918-4be0-bf2a-c550b53ddfaf)# **Sistem Pendeteksi Suhu Tubuh dan Hand Sanitizer Otomatis Berbasis IoT**
 
 Project ini untuk memenuhi tugas akhir mata kuliah IoT
 
@@ -35,7 +35,9 @@ Proyek ini mampu memberikan wawasan tentang konsep dasar IoT, pemrograman, dan r
 | 40 kabel jumper female/female | Digunakan untuk menghubungkan komponen-komponen seperti Wemos D1 Mini, LCD, sensor atau komponen-komponen lain yang memiliki pin male/male | shopee.co.id | Rp9.500 |
 | Sensor Infra Red | Sensor yang digunakan untuk mendeteksi objek (tangan pengguna hand sanitizer) | shopee.co.id | Rp5.000 |
 | Water pump | Aktuator yang digunakan untuk mengalirkan cairan hand sanitizer ke tangan pengguna | shopee.co.id | Rp11.500 |
+| Relay 5V 1 Channel | Komponen yang digunakan untuk mengontrol _Water Pump_ berdasarkan deteksi cahaya infrared | shopee.co.id | Rp.5000 |
 | Kabel usb micro b | Digunakan untuk menghubungkan Wemos D1 Mini ke Laptop/PC | Sudah tersedia | Sudah tersedia |
+| Selang Kecil | Media penyaluran cairan sanitizer yang ditarik oleh Water Pump | Sudah tersedia | Sudah tersedia |
 
 ![WhatsApp Image 2023-12-28 at 17 02 43_adca8301](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/5c96edcf-5c2b-4264-b762-1ff3e127e722)
 
@@ -51,7 +53,17 @@ Gambar 1: Komponen-komponen yang digunakan dalam rangkaian **pendeteksi suhu tub
 
 note: kabel jumper sudah dihubungkan pada komponen-komponen yang digunakan
 
+![WhatsApp Image 2023-12-29 at 22 46 26_2fc36ab4](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/c72d4b09-d148-4b4c-8e04-f219f705f1fb)
+
 Gambar 2: Komponen-komponen yang digunakan dalam rangkaian **Hand sanitizer otomatis**
+
+1. Sensor Infrared (IR)
+2. Wemos D1 Mini
+3. Relay
+4. Water Pump
+5. Selang air PVC
+
+note: kabel jumper dan usb sudah dihubungkan pada komponen
 
 # **Setup pada Komputer**
 
@@ -74,6 +86,18 @@ Pertama hubungkan sensor suhu MLX90614 dengan Wemos D1 Mini melalui media breadb
 Setelah menghubungkan sensor suhu MLX90614 dengan Wemos D1 Mini, selanjutnya hubungkan LCD 1602 I2C ke Wemos D1 mini. LCD ini nantinya akan menampilkan suhu tubuh pengguna yang terbaca melalui sensor suhu. Pin pada LCD 1602 I2C (berurutan dari kiri ke kanan) adalah SCL (kabel abu-abu), SDA (kabel ungu), VCC (kabel biru) dan GND (kabel hijau). Pin-pin tersebut dihubungkan ke pin-pin yang terdapat pada Wemos D1 Mini sama seperti ketika kita menghubungkan sensor suhu dengan Wemos D1 Mini sebelumnya. SDL ke pin D2 pada Wemos D1 Mini, SCL ke D1 pada Wemos D1 Mini, VCC ke pin 5v, dan GND ke pin G Wemos D1 Mini.
 
 Setelah semua komponen dihubungkan, rangkaian pendeteksi suhu tubuh dapat dihubungkan ke laptop/PC menggunakan kabel USB Micro B.
+
+![WhatsApp Image 2023-12-29 at 22 39 12_86c79104](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/a698902b-725f-4ec6-ab76-da0b0167736f)
+
+Gambar 3: menyatukan komponen-komponen untuk membuat rangkaian hand sanitizer otomatis
+
+Untuk membuat rangkaian hand sanitizer otomatis, pertama hubungkan sensor IR dengan Wemos D1 Mini sesuai dengan pin yang tersedia pada komponen, pin VCC sensor IR dihubungkan ke pin 5V pada Wemos D1 Mini, pin GND sensor IR ke pin G (ground) Wemos D1 Mini, pin OUT sensor IR ke pin D1 Wemos D1 Mini. Setelah menghubungkan sensor IR dengan Wemos D1 Mini, selanjutnya menghubungkan Wemos D1 Mini dengan Relay dengan cara menyesuaikan pin-pin pada komponen seperti pada tahap sebelumnya. Pin yang dihubungkan adalah GND (relay) ke G (ground Wemos D1 Mini), In1 (relay) ke D1 (Wemos D1 Mini) dan VCC (relay) ke 5V (Wemos D1 Mini). Kemudian menghubungkan aktuator water pump dengan perangkat relay dengan skema seperti gambar di bawah:
+
+![WhatsApp Image 2023-12-29 at 23 09 51_778fff37](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/b70d47da-173e-45ce-a3e5-14f5b72d9e0f)
+
+Gambar 4: Menghubungkan Water Pump dengan relay
+
+Setelah semua komponen terhubung satu sama lain, rangkaian hand sanitizer otomatis dapat dihubungkan ke laptop/PC menggunakan kabel USB Micro B.
 
 # **Platform yang Digunakan**
 
@@ -239,7 +263,122 @@ void loop() {
 
 - Penjelasan bagian ketujuh kode: Fungsi ini dipanggil secara berulang. Kode ini untuk membaca suhu dari sensor MLX90614, menampilkannya di LCD, dan memublikasikannya ke broker MQTT.
 
-# **Mengirim Data/Konektivitas**
+## **Kode Rangkaian Hand Sanitizer Otomatis**
+
+```
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+
+// WiFi
+const char *ssid = "Surya939";     // Nama WiFi Anda
+const char *password = "Eli2a939"; // Kata sandi WiFi Anda
+
+// MQTT Broker
+const char *mqtt_broker = "broker.emqx.io";
+const char *mqtt_topic = "AUTO";
+const char *mqtt_username = "emqx";
+const char *mqtt_password = "public";
+const int mqtt_port = 1883;
+
+const int irSensorPin = D1; // Pin untuk sensor IR
+const int relayPin = D1;    // Pin untuk relay (kontrol water pump)
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+char message[100];
+
+void callback(char *topic, byte *payload, unsigned int length) {
+  Serial.println("Message arrived in topic:");
+  Serial.print(topic);
+  Serial.println();
+
+  Serial.println("Message:");
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+
+  Serial.println("-----------------------");
+}
+
+void reconnect() {
+  // Loop hingga terhubung ke MQTT broker
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    
+    // Buat ID klien unik dari alamat MAC Wemos D1 Mini
+    String clientId = "esp8266-";
+    clientId += String(WiFi.macAddress());
+    
+    // Coba menghubungkan
+    if (client.connect(clientId.c_str(), mqtt_username, mqtt_password)) {
+      Serial.println("Connected to MQTT broker");
+      
+      // Langganan ke topik yang diinginkan
+      client.subscribe(mqtt_topic);
+    } else {
+      Serial.print("Failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" - Retry in 5 seconds");
+      
+      // Tunggu 5 detik sebelum mencoba kembali
+      delay(5000);
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(irSensorPin, INPUT);
+  pinMode(relayPin, OUTPUT);
+
+  // Mulai koneksi WiFi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+
+  // Tentukan server MQTT dan callback
+  client.setServer(mqtt_broker, mqtt_port);
+  client.setCallback(callback);
+}
+
+void loop() {
+  // Membaca nilai sensor IR
+  int irValue = digitalRead(irSensorPin);
+
+  // Jika sensor IR mendeteksi tangan
+  if (irValue == LOW) {
+    // Mengaktifkan relay untuk menyalakan water pump
+    digitalWrite(relayPin, HIGH);
+
+    // Mengirim pesan ke broker MQTT
+    snprintf(message, sizeof(message), "Hand Sanitizer Activated");
+    client.publish(mqtt_topic, message);
+
+    delay(5000); // Menunggu sebentar sebelum mematikan relay
+
+    // Mematikan relay untuk mematikan water pump
+    digitalWrite(relayPin, LOW);
+  }
+
+  // Periksa koneksi ke broker MQTT
+  if (!client.connected()) {
+    reconnect();
+  }
+
+  // Handle callback MQTT jika ada
+  client.loop();
+
+  delay(1000); // Menunda sebentar sebelum membaca sensor lagi
+}
+```
+
+# **Konektivitas**
+
+Konektivitas yang dipakai yaitu jaringan wifi karena jaringan wifi sangat fleksibel, low latency, dan less bandwidth. Dari jaringan wifi tersebut akan mengirim pesan secara real time dan berulang ke aplikasi mymqtt di topik "CLUSTER" untuk suhu dan "AUTO" untuk auto hand sanitizer ke user yang men-subscribe topik tersebut, adapun penggunaan aplikasi MyMQTT digunakan karena aplikasi nya mudah digunakan, pesan dikirim sesuai dengan pembacaan sensor dan aplikasinya berbasis android
 
 # **Menampilkan Data**
 
@@ -258,4 +397,7 @@ Setelah menyelesaikan tiap tahap sebelumnya, berikut hasil dari proyek ini:
 
 Gambar x: Rangkaian pendeteksi suhu tubuh yang terhubung ke internet
 
+![WhatsApp Image 2023-12-29 at 22 39 12_ae6728e6](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/40b1a460-f811-4845-905d-cf7b6de018ec)
+
+Gambar x: Rangkaian hand sanitizer otomatis
 
