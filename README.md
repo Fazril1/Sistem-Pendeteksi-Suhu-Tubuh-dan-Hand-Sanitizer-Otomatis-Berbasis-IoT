@@ -81,30 +81,53 @@ Gambar 3: Tampilan dashboard Node-RED
 **Bagian pertama: library**
 
 #include <Wire.h>
+
 #include <ESP8266WiFi.h>
+
 #include <Adafruit_MLX90614.h>
+
 #include <PubSubClient.h>
+
 #include <SPI.h>
+
 #include <LiquidCrystal_I2C.h>
 
-penjelasan bagian pertama kode: Di atas merupakan library-library yang diperlukan dalam membuat sistem pendeteksi suhu tubuh otomatis. Ini termasuk Wire (komunikasi I2C), ESP8266WiFi (dukungan WiFi untuk ESP8266), Adafruit_MLX90614 (untuk berkomunikasi dengan termometer inframerah MLX90614), PubSubClient (untuk komunikasi MQTT), SPI (Interface Periferal Serial untuk berkomunikasi dengan perangkat SPI), dan LiquidCrystal_I2C (untuk berkomunikasi dengan LCD I2C).
+Penjelasan bagian pertama kode: Library-library yang diperlukan dalam membuat sistem pendeteksi tubuh, yaitu Wire.h untuk komunikasi I2C, ESP8266WiFi dukungan WiFi untuk ESP8266, Adafruit_MLX90614 untuk berkomunikasi dengan sensor suhu MLX90614, PubSubClient untuk komunikasi MQTT, SPI Interface Periferal Serial untuk berkomunikasi dengan perangkat SPI, dan LiquidCrystal_I2C untuk berkomunikasi dengan LCD I2C.
+
+**Bagian kedua: Konfigurasi WiFi dan MQTT**
 
 //WiFi
+
 const char *ssid = "Surya939"; // Enter your WiFi name
+
 const char *password = "Eli2a939";  // Enter WiFi password
 
+
 // MQTT Broker
+
 const char *mqtt_broker = "broker.emqx.io";
+
 const char *topic = "CLUSTER";
+
 const char *mqtt_username = "emqx";
+
 const char *mqtt_password = "public";
+
 const int mqtt_port = 1883;
 
+Penjelasan bagian kedua kode: Menetapkan kredensial Wi-Fi (ssid dan password) dan detail broker MQTT (mqtt_broker, mqtt_port, mqtt_username, mqtt_password, dan topic).
+
+**Bagian ketiga kode: Inisialisasi WiFi, MQTT, dan LCD**
+
 WiFiClient espClient;
+
 PubSubClient client(espClient);
+
 uint32_t counter;
+
 char str[80];
 
+Penjelasan bagian ketiga kode: Buat _instance_ untuk WiFi, MQTT, dan LCD I2C.
 
 // LCD configuration
 LiquidCrystal_I2C lcd(0x27, 16, 2);  // I2C address 0x27, 16 column and 2 rows
@@ -112,16 +135,27 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);  // I2C address 0x27, 16 column and 2 rows
 // MLX90614 sensor
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
+**Bagian kelima kode: Fungsi Callback MQTT**
 
-void callback(char *topic, byte *payload, unsigned int length) {
+void callback(char *topic, byte *payload, unsigned int length) 
+{
+
     Serial.print("Message arrived in topic: ");
+    
     Serial.println(topic);
+    
     Serial.print("Message: ");
+    
     for (int i = 0; i < length; i++) {
+        
         Serial.print((char)payload[i]);
+    
     }
+    
     Serial.println();
+    
     Serial.println("-----------------------");
+    
 }
 
 
