@@ -105,7 +105,7 @@ Platform yang digunakan untuk menampilkan visualisasi data secara real-time adal
 
 ![WhatsApp Image 2023-12-28 at 18 47 55_6a51b954](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/e7728c60-51b6-4bdc-9bbf-d52fc1c358dc)
 
-Gambar 3: Tampilan dashboard Node-RED
+Gambar 5: Tampilan dashboard Node-RED
 
 # **Kode**
 
@@ -386,7 +386,7 @@ Setelah menerima data dari sensor suhu MLX90614, kemudian data tersebut ditampil
 
 ![WhatsApp Image 2023-12-28 at 19 00 31_ca1396eb](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/5e72db10-fd2e-44e4-adac-23a0fa9f7caa)
 
-Gambar x: Tampilan dashboard yang dibuat menggunakan Node-RED untuk menampilkan data suhu tubuh yang diperoleh dari sensor
+Gambar 6: Tampilan dashboard yang dibuat menggunakan Node-RED untuk menampilkan data suhu tubuh yang diperoleh dari sensor
 
 
 # **Finalisasi**
@@ -395,7 +395,7 @@ Setelah menyelesaikan tiap tahap sebelumnya, berikut hasil dari proyek ini:
 
 ![WhatsApp Image 2023-12-29 at 20 27 12_220c398b](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/06158d82-7026-4c30-be8b-469d4d26ea12)
 
-Gambar x: Rangkaian pendeteksi suhu tubuh yang terhubung ke internet
+Gambar 7: Rangkaian pendeteksi suhu tubuh yang terhubung ke internet
 
 ![WhatsApp Image 2023-12-29 at 22 39 12_ae6728e6](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/40b1a460-f811-4845-905d-cf7b6de018ec)
 
