@@ -243,12 +243,7 @@ void loop() {
 
 # **Menampilkan Data**
 
+Setelah menerima data dari sensor suhu MLX90614, kemudian data tersebut ditampilkan melalui dashboard Node-RED. Grafik pada dashboard akan berubah-ubah berdasarkan suhu yang terbaca oleh sensor. Pada gambar, suhu yang terbaca adalah sebesar 26.71 derajat celcius dengan batas terendah suhu adalah 0 derajat dan suhu tertinggi adalah 40 derajat celcius di mana batas suhu dapat diatur pada saat melakukan pembuatan dashboard penampil suhu di Node-RED. Suhu yang terbaca oleh sensor dipengaruhi oleh kondisi ruangan di mana pada saat melakukan uji coba rangkaian, suhu tubuh pengguna dipengaruhi oleh suhu ruangan yang berkisar 18 hingga 20 derajat celcius.   
+
 # **Finalisasi**
-**asd assddsdsd**
 
-
-```
-    asd
-    sdsd
-    sdsd
-```
