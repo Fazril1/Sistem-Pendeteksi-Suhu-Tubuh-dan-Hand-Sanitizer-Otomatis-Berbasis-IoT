@@ -89,7 +89,7 @@ Gambar 3: Tampilan dashboard Node-RED
 #include <LiquidCrystal_I2C.h>
 ```
 
-Penjelasan bagian pertama kode: Library-library yang diperlukan dalam membuat sistem pendeteksi tubuh, yaitu Wire.h untuk komunikasi I2C, ESP8266WiFi dukungan WiFi untuk ESP8266, Adafruit_MLX90614 untuk berkomunikasi dengan sensor suhu MLX90614, PubSubClient untuk komunikasi MQTT, SPI Interface Periferal Serial untuk berkomunikasi dengan perangkat SPI, dan LiquidCrystal_I2C untuk berkomunikasi dengan LCD I2C.
+- Penjelasan bagian pertama kode: Library-library yang diperlukan dalam membuat sistem pendeteksi tubuh, yaitu Wire.h untuk komunikasi I2C, ESP8266WiFi dukungan WiFi untuk ESP8266, Adafruit_MLX90614 untuk berkomunikasi dengan sensor suhu MLX90614, PubSubClient untuk komunikasi MQTT, SPI Interface Periferal Serial untuk berkomunikasi dengan perangkat SPI, dan LiquidCrystal_I2C untuk berkomunikasi dengan LCD I2C.
 
 **Bagian kedua: Konfigurasi WiFi dan MQTT**
 
@@ -106,9 +106,9 @@ const char *mqtt_password = "public";
 const int mqtt_port = 1883;
 ```
 
-Penjelasan bagian kedua kode: Menetapkan kredensial Wi-Fi (ssid dan password) dan detail broker MQTT (mqtt_broker, mqtt_port, mqtt_username, mqtt_password, dan topic).
+- Penjelasan bagian kedua kode: Menetapkan kredensial Wi-Fi (ssid dan password) dan detail broker MQTT (mqtt_broker, mqtt_port, mqtt_username, mqtt_password, dan topic).
 
-**Bagian ketiga kode: Inisialisasi WiFi, MQTT, dan LCD**
+**Bagian ketiga: Inisialisasi WiFi, MQTT, dan LCD**
 
 ```
 WiFiClient espClient;
@@ -117,9 +117,9 @@ uint32_t counter;
 char str[80];
 ```
 
-Penjelasan bagian ketiga kode: Buat _instance_ untuk WiFi, MQTT, dan LCD I2C.
+- Penjelasan bagian ketiga kode: Buat _instance_ untuk WiFi, MQTT, dan LCD I2C.
 
-**Bagian keempat kode: inisialisasi dan konfigurasi LCD dan Sensor MLX90614**
+**Bagian keempat: inisialisasi dan konfigurasi LCD dan Sensor MLX90614**
 
 ```
 // LCD configuration
@@ -129,9 +129,9 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);  // I2C address 0x27, 16 column and 2 rows
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 ```
 
-Penjelasan bagian keempat kode: 
+- Penjelasan bagian keempat kode: 
 
-**Bagian kelima kode: Fungsi Callback MQTT**
+**Bagian kelima: Fungsi Callback MQTT**
 
 ```
 void callback(char *topic, byte *payload, unsigned int length) 
@@ -152,9 +152,9 @@ void callback(char *topic, byte *payload, unsigned int length)
 }
 ```
 
-Penjelasan bagian kelima kode: 
+- Penjelasan bagian kelima kode: 
 
-**Bagian keenam kode: Fungsi setup**
+**Bagian keenam: Fungsi setup**
 
 ```
 void setup() {
@@ -197,9 +197,9 @@ void setup() {
 }
 ```
 
-Penjelasan bagian keenam kode: Fungsi ini dipanggil sekali saat mikrokontroler mulai berjalan. Ini menginisialisasi komunikasi Serial, menyiapkan LCD, terhubung ke WiFi, terhubung ke broker MQTT, dan menginisialisasi sensor MLX90614.
+- Penjelasan bagian keenam kode: Fungsi ini dipanggil sekali saat mikrokontroler mulai berjalan. Ini menginisialisasi komunikasi Serial, menyiapkan LCD, terhubung ke WiFi, terhubung ke broker MQTT, dan menginisialisasi sensor MLX90614.
 
-**Bagian ketujuh kode: Fungsi Loop Utama**
+**Bagian ketujuh: Fungsi Loop Utama**
 
 ```
 void loop() {
@@ -228,7 +228,7 @@ void loop() {
 }
 ```
 
-Penjelasan bagian ketujuh kode: Fungsi ini dipanggil secara berulang. Kode ini untuk membaca suhu dari sensor MLX90614, menampilkannya di LCD, dan memublikasikannya ke broker MQTT.
+- Penjelasan bagian ketujuh kode: Fungsi ini dipanggil secara berulang. Kode ini untuk membaca suhu dari sensor MLX90614, menampilkannya di LCD, dan memublikasikannya ke broker MQTT.
 
 # **Mengirim Data/Konektivitas**
 
