@@ -1,4 +1,4 @@
-![WhatsApp Image 2023-12-29 at 22 39 12_86c79104](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/ea9fdf27-1918-4be0-bf2a-c550b53ddfaf)# **Sistem Pendeteksi Suhu Tubuh dan Hand Sanitizer Otomatis Berbasis IoT**
+# **Sistem Pendeteksi Suhu Tubuh dan Hand Sanitizer Otomatis Berbasis IoT**
 
 Project ini untuk memenuhi tugas akhir mata kuliah IoT
 
