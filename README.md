@@ -129,7 +129,7 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);  // I2C address 0x27, 16 column and 2 rows
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 ```
 
-- Penjelasan bagian keempat kode: 
+- Penjelasan bagian keempat kode: Kedua kode di atas digunakan untuk mengontrol LCD menggunakan protokol I2C dan berkomunikasi dengan sensor suhu MLX90614
 
 **Bagian kelima: Fungsi Callback MQTT**
 
@@ -152,7 +152,7 @@ void callback(char *topic, byte *payload, unsigned int length)
 }
 ```
 
-- Penjelasan bagian kelima kode: 
+- Penjelasan bagian kelima kode: Membuat fungsi callback yang akan dipanggil ketika pesan baru diterima pada topik MQTT yang di-_subscribe_
 
 **Bagian keenam: Fungsi setup**
 
