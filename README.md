@@ -117,7 +117,7 @@ uint32_t counter;
 char str[80];
 ```
 
-- Penjelasan bagian ketiga kode: Buat _instance_ untuk WiFi, MQTT, dan LCD I2C.
+- Penjelasan bagian ketiga kode: Buat _instance_ untuk WiFi, MQTT, dan LCD I2C. Membuat objek espClient dari kelas WiFiClient. Kode ini berfungsi mengelola koneksi WiFi pada perangkat ESP8266. Setelah itu, membuat objek client dari kelas PubSubClient, yang berfungsi untuk berkomunikasi dengan broker MQTT. Objek ini diinisialisasi dengan objek espClient, sehingga dapat menggunakan koneksi WiFi yang telah dibuat.
 
 **Bagian keempat: inisialisasi dan konfigurasi LCD dan Sensor MLX90614**
 
