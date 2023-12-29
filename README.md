@@ -47,9 +47,11 @@ Gambar 1: Komponen-komponen yang digunakan dalam rangkaian **pendeteksi suhu tub
 2. Sensor Suhu MLX90614
 3. Wemos D1 Mini
 4. LCD 1602 I2C
-5. USB micro B
+5. USB Micro B
 
 note: kabel jumper sudah dihubungkan pada komponen-komponen yang digunakan
+
+Gambar 2: Komponen-komponen yang digunakan dalam rangkaian **Hand sanitizer otomatis**
 
 # **Setup pada Komputer**
 
@@ -59,12 +61,19 @@ note: library adafruit dan liquidcrystal kami coba tidak bisa menginstall secara
 
 # **Menyatukan komponen**
 
-Setelah melakukan setup pada komputer, selanjutnya menyatukan komponen-komponen yang diperlukan dalam membuat pendeteksi suhu tubuh
+Setelah melakukan setup pada komputer, selanjutnya menyatukan komponen-komponen yang diperlukan dalam membuat pendeteksi suhu tubuh dan hand sanitizer otomatis
 
 ![WhatsApp Image 2023-12-28 at 19 35 33_09968c19](https://github.com/Codeginner/Sistem-Pendeteksi-Suhu-Tubuh-dan-Hand-Sanitizer-Otomatis-Berbasis-IoT/assets/91475506/739e0ef9-b12f-4112-89a3-c6f78b0c6a2c)
 
-Gambar 2: menyatukan komponen
+Gambar 2: menyatukan komponen untuk membuat pendeteksi suhu tubuh
 
+Pertama hubungkan sensor suhu MLX90614 dengan Wemos D1 Mini melalui media breadboard. Pin VIN pada sensor suhu dihubungkan ke pin 5v pada Wemos D1 Mini (kabel hitam), pin ground (GND) pada sensor suhu dihubungkan ke pin ground (pin G) Wemos D1 Mini (kabel putih), pin SCL pada sensor suhu dihubungkan ke pin D1 pada Wemos D1 mini (kabel abu-abu) dan yang terakhir hubungkan pin SDA pada sensor suhu ke pin D2 pada Wemos D1 Mini (kabel ungu). 
+
+*note: kabel dapat dilihat pada sensor suhu MLX90614 yang terhubung pada Wemos D1 Mini melalui breadboard
+
+Setelah menghubungkan sensor suhu MLX90614 dengan Wemos D1 Mini, selanjutnya hubungkan LCD 1602 I2C ke Wemos D1 mini. LCD ini nantinya akan menampilkan suhu tubuh pengguna yang terbaca melalui sensor suhu. Pin pada LCD 1602 I2C (berurutan dari kiri ke kanan) adalah SCL (kabel abu-abu), SDA (kabel ungu), VCC (kabel biru) dan GND (kabel hijau). Pin-pin tersebut dihubungkan ke pin-pin yang terdapat pada Wemos D1 Mini sama seperti ketika kita menghubungkan sensor suhu dengan Wemos D1 Mini sebelumnya. SDL ke pin D2 pada Wemos D1 Mini, SCL ke D1 pada Wemos D1 Mini, VCC ke pin 5v, dan GND ke pin G Wemos D1 Mini.
+
+Setelah semua komponen dihubungkan, selanjutnya menghubungkan rangkaian pendeteksi suhu tubuh ke laptop/PC menggunakan kabel USB Micro B.
 
 # **Platform yang Digunakan**
 
