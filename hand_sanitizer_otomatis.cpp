@@ -2,107 +2,83 @@
 #include <PubSubClient.h>
 
 // WiFi
-const char *ssid = "Surya939";     // Nama WiFi Anda
-const char *password = "Eli2a939"; // Kata sandi WiFi Anda
+const char *ssid = "Ibnu"; // Enter your WiFi name
+const char *password = "12345678";  // Enter WiFi password
 
 // MQTT Broker
 const char *mqtt_broker = "broker.emqx.io";
-const char *mqtt_topic = "AUTO";
+const char *topic = "IR";
 const char *mqtt_username = "emqx";
 const char *mqtt_password = "public";
 const int mqtt_port = 1883;
 
-const int irSensorPin = D1; // Pin untuk sensor IR
-const int relayPin = D1;    // Pin untuk relay (kontrol water pump)
+const int irpin = D5;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
-char message[100];
+uint32_t counter;
+char str[80];
 
 void callback(char *topic, byte *payload, unsigned int length) {
-  Serial.println("Message arrived in topic:");
-  Serial.print(topic);
-  Serial.println();
-
-  Serial.println("Message:");
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
-  }
-  Serial.println();
-
-  Serial.println("-----------------------");
+    Serial.print("Message arrived in topic: ");
+    Serial.println(topic);
+    Serial.print("Message: ");
+    for (int i = 0; i < length; i++) {
+        Serial.print((char)payload[i]);
+    }
+    Serial.println();
+    Serial.println("-----------------------");
 }
 
-void reconnect() {
-  // Loop hingga terhubung ke MQTT broker
-  while (!client.connected()) {
-    Serial.print("Attempting MQTT connection...");
-    
-    // Buat ID klien unik dari alamat MAC Wemos D1 Mini
-    String clientId = "esp8266-";
-    clientId += String(WiFi.macAddress());
-    
-    // Coba menghubungkan
-    if (client.connect(clientId.c_str(), mqtt_username, mqtt_password)) {
-      Serial.println("Connected to MQTT broker");
-      
-      // Langganan ke topik yang diinginkan
-      client.subscribe(mqtt_topic);
-    } else {
-      Serial.print("Failed, rc=");
-      Serial.print(client.state());
-      Serial.println(" - Retry in 5 seconds");
-      
-      // Tunggu 5 detik sebelum mencoba kembali
-      delay(5000);
+void connectToMQTT() {
+    while (!client.connected()) {
+        String client_id = "esp32-client-";
+        client_id += String(WiFi.macAddress());
+        Serial.printf("The client %s connects to the public mqtt broker\n", client_id.c_str());
+        if (client.connect(client_id.c_str(), mqtt_username, mqtt_password)) {
+            Serial.println("Public emqx mqtt broker connected");
+        } else {
+            Serial.print("Failed to connect with state ");
+            Serial.print(client.state());
+            delay(200);
+        }
     }
-  }
 }
 
 void setup() {
-  Serial.begin(115200);
-  pinMode(irSensorPin, INPUT);
-  pinMode(relayPin, OUTPUT);
+    Serial.begin(115200);
+    
+    pinMode(irpin, INPUT);
 
-  // Mulai koneksi WiFi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi...");
-  }
-  Serial.println("Connected to WiFi");
+    // WiFi setup
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(200);
+        Serial.println("Connecting to WiFi..");
+    }
+    Serial.println("Connected to the WiFi network");
 
-  // Tentukan server MQTT dan callback
-  client.setServer(mqtt_broker, mqtt_port);
-  client.setCallback(callback);
+    // MQTT setup
+    client.setServer(mqtt_broker, mqtt_port);
+    client.setCallback(callback);
+    connectToMQTT();
+
 }
 
 void loop() {
-  // Membaca nilai sensor IR
-  int irValue = digitalRead(irSensorPin);
+    if (!client.connected()) {
+        connectToMQTT();  // Reconnect if MQTT connection is lost
+    }
 
-  // Jika sensor IR mendeteksi tangan
-  if (irValue == LOW) {
-    // Mengaktifkan relay untuk menyalakan water pump
-    digitalWrite(relayPin, HIGH);
+    client.loop();
 
-    // Mengirim pesan ke broker MQTT
-    snprintf(message, sizeof(message), "Hand Sanitizer Activated");
-    client.publish(mqtt_topic, message);
+    int nilaiirpin = digitalRead(irpin);
 
-    delay(5000); // Menunggu sebentar sebelum mematikan relay
+    // Prepare message to publish: "object detected" or "not object detected"
+    const char *message = nilaiirpin == HIGH ? "Objek Tidak Terdeteksi" : "Objek Terdeteksi";
 
-    // Mematikan relay untuk mematikan water pump
-    digitalWrite(relayPin, LOW);
-  }
+    // Publish message to MQTT broker
+    client.publish(topic, message);
 
-  // Periksa koneksi ke broker MQTT
-  if (!client.connected()) {
-    reconnect();
-  }
-
-  // Handle callback MQTT jika ada
-  client.loop();
-
-  delay(1000); // Menunda sebentar sebelum membaca sensor lagi
+    delay(200);
 }
